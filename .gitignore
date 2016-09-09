@@ -1,2 +1,11 @@
-.vscode
+/dist/
 node_modules
+bower_components
+
+.idea/
+.settings/
+.vscode
+
+npm-debug.log
+
+/modules/rollup-test/dist/
