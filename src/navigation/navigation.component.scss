@@ -1,0 +1,5 @@
+@import '../../public/scss/colors';
+
+.active{
+    background-color: lighten($theme-color, 3%);
+}
