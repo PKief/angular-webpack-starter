@@ -5,6 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { LoggedInGuard } from '../login/logged-in.guard';
 import { LoggedOutGuard } from '../login/logged-out.guard';
 import { StartComponent } from '../start/start.component';
+import { SettingsComponent } from '../settings/settings.component';
 
 const appRoutes: Routes = [
     {
@@ -20,6 +21,11 @@ const appRoutes: Routes = [
     {
         path: 'start',
         component: StartComponent,
+        canActivate: [LoggedInGuard]
+    },
+    {
+        path: 'settings',
+        component: SettingsComponent,
         canActivate: [LoggedInGuard]
     },
     {

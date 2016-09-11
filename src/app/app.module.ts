@@ -3,6 +3,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { Navigation } from '../navigation/navigation.component';
 import { LoginComponent } from '../login/login.component';
+import { SettingsComponent } from '../settings/settings.component';
 import { LoginService } from '../login/login.service';
 import { LoggedInGuard } from '../login/logged-in.guard';
 import { LoggedOutGuard } from '../login/logged-out.guard';
@@ -18,6 +19,7 @@ import { routing } from './app.routing';
   declarations: [
     AppComponent,
     LoginComponent,
+    SettingsComponent,
     StartComponent,    
     Navigation
   ],
