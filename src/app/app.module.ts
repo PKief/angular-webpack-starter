@@ -20,7 +20,7 @@ import { routing } from './app.routing';
     AppComponent,
     LoginComponent,
     SettingsComponent,
-    StartComponent,    
+    StartComponent,
     Navigation
   ],
   providers: [
@@ -28,6 +28,6 @@ import { routing } from './app.routing';
     LoggedInGuard,
     LoggedOutGuard
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,8 +6,8 @@ require('./../../public/scss/styles.global.scss');
 require('./../../assets/images/favicon.ico');
 
 @Component({
-  selector: 'my-app',  
+  selector: 'my-app',
   templateUrl: './app.component.html',
-  styles: [ require('./app.component.scss') ] 
+  styles: [require('./app.component.scss')]
 })
 export class AppComponent { }
