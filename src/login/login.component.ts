@@ -16,6 +16,7 @@ export class LoginComponent {
     constructor(private loginService: LoginService) { }
 
     submitLogin(){
+        console.log('test');
         this.loginService.login();
     }
 }

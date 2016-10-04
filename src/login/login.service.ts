@@ -12,6 +12,7 @@ export class LoginService {
     login() {
         localStorage.setItem('loggedIn', 'true');
         this.loggedIn = true;
+        this.router.navigate(['/start']);
         return true;
     }
 
@@ -19,6 +20,7 @@ export class LoginService {
         localStorage.removeItem('loggedIn');
         this.loggedIn = false;
         this.router.navigate(['/']);
+        return true;
     }
 
     isLoggedIn() {

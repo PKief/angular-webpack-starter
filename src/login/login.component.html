@@ -1,5 +1,5 @@
-<form>
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-    <input type="submit" value="Login" (click)="submitLogin()">
+<form (ngSubmit)="submitLogin()" #loginForm="ngForm">
+    <input [(ngModel)]="username" id="username" name="username" type="text" class="validate" required>
+    <input [(ngModel)]="password" id="password" name="pw" type="password" class="validate" required>
+    <button [disabled]="!loginForm.form.valid" type="submit">Login</button>
 </form>
