@@ -1,10 +1,18 @@
+import { LoginService } from './../login/login.service';
 import { Component } from '@angular/core';
-import { Navigation } from '../navigation/navigation.component';
 // let styles = String(require('./start.component.scss'));
 
 @Component({
     selector: 'start',
     templateUrl: './start.component.html',
-    styles: [ require('./start.component.scss') ] 
+    styles: [require('./start.component.scss')]
 })
-export class StartComponent { }
+export class StartComponent {
+    constructor(private loginService: LoginService) {
+
+    }
+
+    logout(){
+        this.loginService.logout();
+    }
+}

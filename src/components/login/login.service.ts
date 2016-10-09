@@ -12,14 +12,14 @@ export class LoginService {
     login() {
         localStorage.setItem('loggedIn', 'true');
         this.loggedIn = true;
-        this.router.navigate(['/start']);
+        this.router.navigate(['/app']);
         return true;
     }
 
     logout() {
         localStorage.removeItem('loggedIn');
         this.loggedIn = false;
-        this.router.navigate(['/']);
+        this.router.navigate(['/login']);
         return true;
     }
 
