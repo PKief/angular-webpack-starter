@@ -12,8 +12,8 @@ import { SettingsComponent } from '../settings/settings.component';
 const appRoutes: Routes = [
     {
         path: '',
-        redirectTo: '/app',
-        pathMatch: 'full'
+        redirectTo: 'app',
+        pathMatch: 'full',
     },
     {
         path: 'login',
@@ -22,8 +22,8 @@ const appRoutes: Routes = [
     },
     {
         path: 'app',
-        component: StartComponent,
         canActivate: [LoggedInGuard],
+        component: StartComponent,
         children: [
             {
                 path: '',
@@ -36,7 +36,11 @@ const appRoutes: Routes = [
             {
                 path: 'settings',
                 component: SettingsComponent
-            }        
+            },
+            {
+                path: '**',
+                redirectTo: '/app',
+            }
         ]
     }
 ];
