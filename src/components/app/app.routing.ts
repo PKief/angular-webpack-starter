@@ -1,4 +1,3 @@
-import { WelcomeComponent } from './../welcome/welcome.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -6,8 +5,8 @@ import { LoginComponent } from '../login/login.component';
 import { LoggedInGuard } from '../login/logged-in.guard';
 import { LoggedOutGuard } from '../login/logged-out.guard';
 import { StartComponent } from '../start/start.component';
+import { WelcomeComponent } from '../welcome/welcome.component';
 import { SettingsComponent } from '../settings/settings.component';
-
 
 const appRoutes: Routes = [
     {
@@ -30,18 +29,22 @@ const appRoutes: Routes = [
                 redirectTo: 'start'
             },
             {
-                path: 'start',
-                component: WelcomeComponent
-            },
-            {
                 path: 'settings',
                 component: SettingsComponent
             },
             {
+                path: 'start',
+                component: WelcomeComponent
+            },
+            {
                 path: '**',
-                redirectTo: '/app',
+                redirectTo: '/app'
             }
         ]
+    },
+    {
+        path: '**',
+        redirectTo: '/app'
     }
 ];
 
