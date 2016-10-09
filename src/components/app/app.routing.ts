@@ -7,6 +7,7 @@ import { LoggedOutGuard } from '../login/logged-out.guard';
 import { StartComponent } from '../start/start.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { SettingsComponent } from '../settings/settings.component';
+import { PageNotFoundComponent } from '../pagenotfound/pagenotfound.component';
 
 const appRoutes: Routes = [
     {
@@ -36,15 +37,15 @@ const appRoutes: Routes = [
                 path: 'start',
                 component: WelcomeComponent
             },
-            {
-                path: '**',
-                redirectTo: '/app'
-            }
         ]
     },
     {
         path: '**',
-        redirectTo: '/app'
+        redirectTo: '/pagenotfound'
+    },
+    {
+        path: 'pagenotfound',
+        component: PageNotFoundComponent    
     }
 ];
 
