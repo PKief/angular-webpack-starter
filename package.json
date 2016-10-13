@@ -19,8 +19,8 @@
     "@angular/platform-browser": "~2.0.2",
     "@angular/platform-browser-dynamic": "~2.0.2",
     "@angular/router": "~3.0.2",
-    "@angular/upgrade": "~2.0.2",            
-    "express": "^4.14.0",                
+    "@angular/upgrade": "~2.0.2",
+    "express": "^4.14.0",
     "angular-in-memory-web-api": "~0.1.5",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
@@ -30,6 +30,7 @@
     "zone.js": "^0.6.25"
   },
   "devDependencies": {
+    "angular2-router-loader": "^0.3.2",
     "angular2-template-loader": "^0.5.0",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",

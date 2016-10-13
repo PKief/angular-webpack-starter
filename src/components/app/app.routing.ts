@@ -37,6 +37,14 @@ const appRoutes: Routes = [
                 path: 'start',
                 component: WelcomeComponent
             },
+            {
+                path: 'about',
+                loadChildren: './../about/about.module#AboutModule',
+                data: { preload: true },
+                // loadChildren: () => new Promise((resolve)=>(require as any).ensure([], (require: any) => {
+                //     resolve(require('./../about/about.module')['AboutModule']);
+                // }))
+            },
         ]
     },
     {

@@ -18,7 +18,7 @@ module.exports = {
     loaders: [
       {
         test: /\.ts$/,
-        loaders: ['ts', 'angular2-template-loader']
+        loaders: ['ts', 'angular2-template-loader', 'angular2-router-loader']
       },
       {
         test: /\.html$/,
