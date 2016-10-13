@@ -37,6 +37,10 @@ const appRoutes: Routes = [
                 path: 'start',
                 component: WelcomeComponent
             },
+            {
+                path: '**',
+                redirectTo: 'start'
+            },
         ]
     },
     {
