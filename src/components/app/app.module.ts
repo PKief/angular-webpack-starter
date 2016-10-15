@@ -11,7 +11,7 @@ import { PageNotFoundComponent } from '../pagenotfound/pagenotfound.component';
 import { StartComponent } from '../start/start.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 
-import { routing } from './app.routing';
+import { routing, APP_ROUTES_MODULE_PROVIDER } from './app.routing';
 
 @NgModule({
   imports: [
@@ -30,7 +30,8 @@ import { routing } from './app.routing';
   providers: [
     LoginService,
     LoggedInGuard,
-    LoggedOutGuard
+    LoggedOutGuard,
+    APP_ROUTES_MODULE_PROVIDER
   ],
   bootstrap: [AppComponent]
 })
