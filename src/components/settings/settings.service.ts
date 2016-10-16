@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-export enum Category {
-    Basic,
-    Profile
-}
-
 export class Setting {
     name: string;
     description: string;
@@ -27,7 +22,7 @@ let SETTINGS = [
 let settingsPromise = Promise.resolve(SETTINGS);
 
 @Injectable()
-export class SettingCategoriesService {
+export class SettingsService {
     getAllSettings() {
         return settingsPromise;
     }

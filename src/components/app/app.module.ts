@@ -4,10 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../login/login.component';
 import { SettingsComponent } from '../settings/settings.component';
-import { SettingCategoryComponent } from './../settingCategory/settingCategory.component';
-import { SettingCategoriesComponent } from './../settingCategories/settingCategories.component';
-import { SettingCategoriesResolver } from './../settingCategories/settingCategories.resolver';
-import { SettingCategoriesService } from './../settingCategories/settingCategories.service';
+import { SettingCategoryComponent } from './../settings/settingCategory.component';
+import { SettingsResolver } from './../settings/settings.resolver';
+import { SettingsService } from './../settings/settings.service';
 import { LoginService } from '../login/login.service';
 import { LoggedInGuard } from '../login/logged-in.guard';
 import { LoggedOutGuard } from '../login/logged-out.guard';
@@ -27,8 +26,7 @@ import { routing, APP_ROUTES_MODULE_PROVIDER } from './app.routing';
     AppComponent,
     LoginComponent,
     SettingsComponent,
-    SettingCategoryComponent,
-    SettingCategoriesComponent,
+    SettingCategoryComponent,    
     StartComponent,
     WelcomeComponent,
     PageNotFoundComponent
@@ -38,8 +36,8 @@ import { routing, APP_ROUTES_MODULE_PROVIDER } from './app.routing';
     LoggedInGuard,
     LoggedOutGuard,
     APP_ROUTES_MODULE_PROVIDER,
-    SettingCategoriesService,
-    SettingCategoriesResolver,
+    SettingsService,
+    SettingsResolver,
   ],
   bootstrap: [AppComponent]
 })

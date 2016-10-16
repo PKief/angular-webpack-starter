@@ -8,9 +8,8 @@ import { StartComponent } from '../start/start.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { PageNotFoundComponent } from '../pagenotfound/pagenotfound.component';
-import { SettingCategoryComponent } from './../settingCategory/settingCategory.component';
-import { SettingCategoriesComponent } from './../settingCategories/settingCategories.component';
-import { SettingCategoriesResolver } from './../settingCategories/settingCategories.resolver';
+import { SettingCategoryComponent } from './../settings/settingCategory.component';
+import { SettingsResolver } from './../settings/settings.resolver';
 
 const appRoutes: Routes = [
     {
@@ -44,7 +43,7 @@ const appRoutes: Routes = [
                         path: ':category',
                         component: SettingCategoryComponent,
                         resolve: {
-                            settings: SettingCategoriesResolver
+                            settings: SettingsResolver
                         },
                     }
                 ]

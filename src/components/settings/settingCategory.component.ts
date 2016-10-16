@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Setting, Category } from './../settingCategories/settingCategories.service';
+import { Setting } from './../settings/settings.service';
 
 @Component({
     selector: 'setting-category',
@@ -21,9 +21,5 @@ export class SettingCategoryComponent implements OnInit {
             // this.settings = this.route.snapshot.data['settings'];
         });
         this.settings = this.route.data.pluck('settings');
-    }
-
-    filterSettings(category: string) {
-        return this.settings.filter(setting => setting.category === category);
     }
 }
