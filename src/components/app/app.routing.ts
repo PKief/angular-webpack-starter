@@ -8,6 +8,9 @@ import { StartComponent } from '../start/start.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { PageNotFoundComponent } from '../pagenotfound/pagenotfound.component';
+import { SettingCategoryComponent } from './../settingCategory/settingCategory.component';
+import { SettingCategoriesComponent } from './../settingCategories/settingCategories.component';
+import { SettingCategoriesResolver } from './../settingCategories/settingCategories.resolver';
 
 const appRoutes: Routes = [
     {
@@ -31,7 +34,20 @@ const appRoutes: Routes = [
             },
             {
                 path: 'settings',
-                component: SettingsComponent
+                component: SettingsComponent,
+                children: [
+                    {
+                        path: '',
+                        redirectTo: 'basic'
+                    },
+                    {
+                        path: ':category',
+                        component: SettingCategoryComponent,
+                        resolve: {
+                            settings: SettingCategoriesResolver
+                        },
+                    }
+                ]
             },
             {
                 path: 'start',
@@ -64,7 +80,7 @@ const appRoutes: Routes = [
 export class SelectedPreloadingStrategy implements PreloadingStrategy {
     preload(route: Route, load: Function): Observable<any> {
         // if the route has the attribute 'data' and it is set to true, then make preloading, otherwise lazy loading
-        return route.data && route.data['preload'] ? load() : Observable.of(null); 
+        return route.data && route.data['preload'] ? load() : Observable.of(null);
     }
 }
 

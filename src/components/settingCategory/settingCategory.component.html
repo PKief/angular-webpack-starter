@@ -1,0 +1,5 @@
+<p>{{title}} settings</p>
+<ul>
+	<!--<li *ngFor="let setting of settings">test</li>-->
+    <li *ngFor="let setting of settings | async">{{setting.name}}</li>
+</ul>
