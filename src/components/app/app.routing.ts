@@ -7,6 +7,7 @@ import { LoggedOutGuard } from '../login/logged-out.guard';
 import { StartComponent } from '../start/start.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { SettingsComponent } from '../settings/settings.component';
+import { MessageComponent } from './../message/message.component';
 import { PageNotFoundComponent } from '../pagenotfound/pagenotfound.component';
 import { SettingCategoryComponent } from './../settings/settingCategory.component';
 import { SettingsResolver } from './../settings/settings.resolver';
@@ -29,7 +30,27 @@ const appRoutes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'start'
+                redirectTo: 'welcome'
+            },
+            {
+                path: 'welcome',
+                component: WelcomeComponent,
+                children: [
+                    {
+                        path: '',
+                        component: MessageComponent,                        
+                    },
+                    {
+                        path: 'message',
+                        component: MessageComponent,
+                        outlet: 'popup',
+                    },
+                    {
+                        path: 'message2',
+                        component: MessageComponent,
+                        outlet: 'popup2',
+                    },
+                ]
             },
             {
                 path: 'settings',
@@ -37,7 +58,7 @@ const appRoutes: Routes = [
                 children: [
                     {
                         path: '',
-                        redirectTo: 'basic'
+                        redirectTo: 'basic',
                     },
                     {
                         path: ':category',
@@ -45,12 +66,8 @@ const appRoutes: Routes = [
                         resolve: {
                             settings: SettingsResolver
                         },
-                    }
+                    },
                 ]
-            },
-            {
-                path: 'start',
-                component: WelcomeComponent
             },
             {
                 path: 'about',

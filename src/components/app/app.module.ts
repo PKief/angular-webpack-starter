@@ -13,6 +13,7 @@ import { LoggedOutGuard } from '../login/logged-out.guard';
 import { PageNotFoundComponent } from '../pagenotfound/pagenotfound.component';
 import { StartComponent } from '../start/start.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
+import { MessageComponent } from './../message/message.component';
 
 import { routing, APP_ROUTES_MODULE_PROVIDER } from './app.routing';
 
@@ -29,7 +30,8 @@ import { routing, APP_ROUTES_MODULE_PROVIDER } from './app.routing';
     SettingCategoryComponent,    
     StartComponent,
     WelcomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MessageComponent,
   ],
   providers: [
     LoginService,

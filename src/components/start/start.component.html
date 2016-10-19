@@ -1,8 +1,10 @@
 <h1>Hello</h1>
 <button (click)="logout()">Logout</button>
 <ul>
-    <li><a routerLink="/app/start" routerLinkActive="active">Start</a></li>
-    <li><a routerLink="/app/settings" routerLinkActive="active">Settings</a></li>
-    <li><a routerLink="/app/about" routerLinkActive="active">About</a></li>
+	<li><a routerLink="/app/welcome" routerLinkActive="active">Welcome</a></li>
+	<li><a [routerLink]="['/app/welcome', {outlets: {'popup': ['message'],'popup2': ['message2'] }}]">Welcome with popups</a></li>
+	<li><a [routerLink]="['/app/welcome', {outlets: {'popup': null, 'popup2': null }}]">Welcome hide popups</a></li>
+	<li><a routerLink="/app/settings" routerLinkActive="active">Settings</a></li>
+	<li><a routerLink="/app/about" routerLinkActive="active">About</a></li>
 </ul>
 <router-outlet></router-outlet>
