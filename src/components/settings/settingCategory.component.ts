@@ -9,7 +9,7 @@ import { Setting } from './../settings/settings.service';
 })
 export class SettingCategoryComponent implements OnInit {
     // settings: Setting[];
-    settings: Observable<Setting>;
+    settings: Observable<{}>;
     title: string;
 
     constructor(private route: ActivatedRoute, private router: Router) {
