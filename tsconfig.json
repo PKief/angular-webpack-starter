@@ -14,7 +14,8 @@
     "types": [
       "core-js",
       "node",
-      "jasmine"
+      "jasmine",
+      "lodash"
     ]
   },
   "exclude": [

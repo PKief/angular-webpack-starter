@@ -1,6 +1,10 @@
-<h1>Settings</h1>
+<h1>{{'settings.title'|translate}}</h1>
+<p>{{'settings.language'|translate}}</p>
+<button (click)="changeLanguage('de')">German</button>
+<button (click)="changeLanguage('en')">English</button>
+
 <ul>
-    <li><a routerLink="/app/settings/basic" routerLinkActive="active">Basic</a></li>
-    <li><a routerLink="/app/settings/profile" routerLinkActive="active">Profile</a></li>
+	<li><a routerLink="/app/settings/basic" routerLinkActive="active">Basic</a></li>
+	<li><a routerLink="/app/settings/profile" routerLinkActive="active">Profile</a></li>
 </ul>
 <router-outlet></router-outlet>

@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from '../pagenotfound/pagenotfound.component';
 import { StartComponent } from '../start/start.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { MessageComponent } from './../message/message.component';
+import { TranslatePipe, TRANSLATION_PROVIDERS, TranslationService } from './../translation';
 
 import { routing, APP_ROUTES_MODULE_PROVIDER } from './app.routing';
 
@@ -27,11 +28,12 @@ import { routing, APP_ROUTES_MODULE_PROVIDER } from './app.routing';
     AppComponent,
     LoginComponent,
     SettingsComponent,
-    SettingCategoryComponent,    
+    SettingCategoryComponent,
     StartComponent,
     WelcomeComponent,
     PageNotFoundComponent,
     MessageComponent,
+    TranslatePipe,    
   ],
   providers: [
     LoginService,
@@ -40,6 +42,8 @@ import { routing, APP_ROUTES_MODULE_PROVIDER } from './app.routing';
     APP_ROUTES_MODULE_PROVIDER,
     SettingsService,
     SettingsResolver,
+    TRANSLATION_PROVIDERS,
+    TranslationService,
   ],
   bootstrap: [AppComponent]
 })
