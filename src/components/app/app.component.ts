@@ -1,11 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TranslationService } from './../translation';
 
 require('./../../styles/styles.global.scss');
 require('./../../images/favicon.ico');
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styles: [require('./app.component.scss')]
+    selector: 'my-app',
+    templateUrl: './app.component.html',
+    styles: [require('./app.component.scss')]
 })
-export class AppComponent { }
+export class AppComponent implements OnInit {
+    public translatedText: string;
+    public supportedLanguages: any[];
+    constructor(private translationService: TranslationService) { }
+
+    ngOnInit() {
+        // set default language
+        let language = navigator.language;
+        // this.translationService.use('de');        
+        this.translationService.use(language);
+        this.translationService.setDefaultLanguage('en');
+        this.translationService.enableFallback(true);
+    }
+}

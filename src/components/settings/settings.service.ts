@@ -1,21 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-export class Setting {
-    name: string;
-    description: string;
-    category: string;
-
-    constructor(name: string, description: string, category: string) {
-        this.name = name;
-        this.description = description;
-        this.category = category;
-    }
-}
+import { Setting } from './setting';
 
 let SETTINGS = [
     new Setting('password', 'change your password', "profile"),
-    new Setting('username', 'change your username', "profile"),
+    new Setting('username', 'change your username', "profile"),    
     new Setting('notifications', 'change your notifications', "basic"),
     new Setting('timezone', 'change your timezone', "basic"),
 ]

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Setting } from './../settings/settings.service';
+import { Setting } from './setting';
 
 @Component({
     selector: 'setting-category',
@@ -10,7 +10,7 @@ import { Setting } from './../settings/settings.service';
 export class SettingCategoryComponent implements OnInit {
     // settings: Setting[];
     settings: Observable<{}>;
-    title: string;
+    title: string;    
 
     constructor(private route: ActivatedRoute, private router: Router) {
     }
