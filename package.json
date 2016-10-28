@@ -6,8 +6,7 @@
     "start": "webpack-dev-server --inline --progress --port 3000",
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail && npm run build-server",
-    "build-server": "node server.js",
-    "postinstall": "typings install"
+    "build-server": "node server.js"
   },
   "license": "MIT",
   "dependencies": {
@@ -20,7 +19,7 @@
     "@angular/platform-browser-dynamic": "~2.1.2",
     "@angular/router": "~3.1.2",
     "@angular/upgrade": "~2.1.2",
-    "@types/core-js": "^0.9.34",    
+    "@types/core-js": "^0.9.34",
     "@types/lodash": "^4.14.37",
     "angular-in-memory-web-api": "~0.1.13",
     "bootstrap": "^3.3.7",
@@ -57,7 +56,7 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "ts-loader": "^0.9.5",
-    "typescript": "^2.0.6",    
+    "typescript": "^2.0.6",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2",
     "webpack-merge": "^0.15.0"
