@@ -13,6 +13,7 @@
     ],
     "types": [
       "core-js",
+      "chai",
       "node",
       "jasmine",
       "lodash"
