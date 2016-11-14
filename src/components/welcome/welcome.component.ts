@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -17,6 +17,9 @@ export class WelcomeComponent {
     }
 
     goToAboutWithParams() {
-        this.router.navigate(['/app/about', { dataForm: 'test', page: '2' }]);
+        let navigationExtras: NavigationExtras = {
+            queryParams: { "something": 1 },
+        }
+        this.router.navigate(['/app/about', { dataForm: 'test', page: '2' }], navigationExtras);
     }
 }
