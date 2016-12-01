@@ -7,7 +7,7 @@ require('./../../images/favicon.ico');
 @Component({
     selector: 'my-app',
     templateUrl: './app.component.html',
-    styles: [require('./app.component.scss')]
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
     public translatedText: string;
