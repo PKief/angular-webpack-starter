@@ -38,7 +38,7 @@ const appRoutes: Routes = [
                 children: [
                     {
                         path: '',
-                        component: MessageComponent,                        
+                        component: MessageComponent,
                     },
                     {
                         path: 'message',
@@ -111,7 +111,7 @@ export class DelayedPreloadingStrategy implements PreloadingStrategy {
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(
     appRoutes,
-    { preloadingStrategy: SelectedPreloadingStrategy }
+    { preloadingStrategy: SelectedPreloadingStrategy, enableTracing: true },
 );
 
 export const APP_ROUTES_MODULE_PROVIDER = [SelectedPreloadingStrategy];
