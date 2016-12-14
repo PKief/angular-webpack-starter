@@ -67,7 +67,7 @@ export class TranslationService {
 
         const values: string[] = [].concat(words);
         values.forEach((e, i) => {
-            translation = translation.replace(this.PLACEHOLDER.concat(<any>i), e)
+            translation = translation.replace(this.PLACEHOLDER.concat(<any>i), e);
         });
 
         return translation;

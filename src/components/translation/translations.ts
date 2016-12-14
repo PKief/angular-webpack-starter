@@ -9,9 +9,9 @@ export const TRANSLATIONS = new OpaqueToken('translations');
 const dictionary = {
     [LANG_DE_NAME]: LANG_DE_TRANSLATIONS,
     [LANG_EN_NAME]: LANG_EN_TRANSLATIONS
-}
+};
 
 // providers
 export const TRANSLATION_PROVIDERS = [
     { provide: TRANSLATIONS, useValue: dictionary }
-]
+];

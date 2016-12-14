@@ -5,11 +5,11 @@ import { TranslationService } from './translate.service';
     name: 'translate',
     pure: false,
 })
-export class TranslatePipe implements PipeTransform{
-    constructor(private translate: TranslationService){        
+export class TranslatePipe implements PipeTransform {
+    constructor(private translate: TranslationService) {
     }
-    transform(value: string, args: string | string[]):any{
-        if(!value) return;
+    transform(value: string, args: string | string[]): any {
+        if (!value) return;
         return this.translate.instant(value, args);
     }
 }

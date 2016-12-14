@@ -12,7 +12,7 @@ export class StartComponent {
 
     }
 
-    logout(){
+    logout() {
         this.loginService.logout();
     }
 }

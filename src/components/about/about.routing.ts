@@ -19,7 +19,7 @@ const aboutRoutes: Routes = [
         path: 'fallback',
         component: AboutFallbackComponent,
     }
-]
+];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(
     aboutRoutes

@@ -13,8 +13,8 @@ export class SettingsComponent {
         this.translationService.use(language);
     }
 
-    goBack(){
+    goBack() {
         // this.router.navigate(['../'], {relativeTo: this.route});
-        this.router.navigate(['./'], {relativeTo: this.route});
+        this.router.navigate(['./'], { relativeTo: this.route });
     }
 }

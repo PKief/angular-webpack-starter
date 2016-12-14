@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
     templateUrl: './message.component.html'
 })
 export class MessageComponent {
-    constructor(private router: Router) { }    
+    constructor(private router: Router) { }
 }

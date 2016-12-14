@@ -10,14 +10,14 @@ import { Setting } from './setting';
 export class SettingCategoryComponent implements OnInit {
     // settings: Setting[];
     settings: Observable<{}>;
-    title: string;    
+    title: string;
 
     constructor(private route: ActivatedRoute, private router: Router) {
     }
 
     ngOnInit() {
         this.route.params.subscribe((_: any) => {
-            this.title = _.category
+            this.title = _.category;
             // this.settings = this.route.snapshot.data['settings'];
         });
         this.settings = this.route.data.pluck('settings');

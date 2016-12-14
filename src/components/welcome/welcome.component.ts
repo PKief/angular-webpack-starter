@@ -19,7 +19,7 @@ export class WelcomeComponent {
     goToAboutWithParams() {
         let navigationExtras: NavigationExtras = {
             queryParams: { "something": 1 },
-        }
+        };
         this.router.navigate(['/app/about', { dataForm: 'test', page: '2' }], navigationExtras);
     }
 }

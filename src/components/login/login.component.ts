@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
-    styles: [ require('./login.component.scss') ] 
+    styles: [require('./login.component.scss')]
 })
 export class LoginComponent {
 
@@ -16,7 +16,7 @@ export class LoginComponent {
 
     constructor(private loginService: LoginService, private router: Router) { }
 
-    submitLogin(){        
+    submitLogin() {
         this.loginService.login();
-    }    
+    }
 }

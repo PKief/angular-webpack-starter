@@ -10,4 +10,4 @@ export const LANG_EN_TRANSLATIONS = {
         "description": "Change the behaviour of the application here.",
         "language": "Change the application language:",
     }
-}
+};

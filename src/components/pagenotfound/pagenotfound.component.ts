@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
     selector: 'pagenotfound',
     templateUrl: './pagenotfound.component.html'
 })
-export class PageNotFoundComponent{}
+export class PageNotFoundComponent { }

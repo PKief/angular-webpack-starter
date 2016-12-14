@@ -33,7 +33,7 @@ import { routing, APP_ROUTES_MODULE_PROVIDER } from './app.routing';
     WelcomeComponent,
     PageNotFoundComponent,
     MessageComponent,
-    TranslatePipe,    
+    TranslatePipe,
   ],
   providers: [
     LoginService,
