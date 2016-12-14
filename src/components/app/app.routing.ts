@@ -111,7 +111,7 @@ export class DelayedPreloadingStrategy implements PreloadingStrategy {
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(
     appRoutes,
-    { preloadingStrategy: SelectedPreloadingStrategy, enableTracing: true },
+    { preloadingStrategy: SelectedPreloadingStrategy, enableTracing: false },
 );
 
 export const APP_ROUTES_MODULE_PROVIDER = [SelectedPreloadingStrategy];
