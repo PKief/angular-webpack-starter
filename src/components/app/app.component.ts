@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TranslationService } from './../translation';
 
 require('./../../styles/styles.global.scss');
-require('./../../images/favicon.ico');
 
 @Component({
     selector: 'my-app',
