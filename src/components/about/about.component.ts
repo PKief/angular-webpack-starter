@@ -16,5 +16,11 @@ export class AboutComponent {
         this.route.params.subscribe(p => {
             // console.log(p);
         });
+
+        this.route.queryParams.subscribe((p: any) => {
+            if (p.filter) {
+                console.log(JSON.parse(p.filter));
+            }
+        });
     }
 }
