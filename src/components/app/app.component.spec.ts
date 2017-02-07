@@ -1,3 +1,4 @@
+import { TranslationService } from '../translation';
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterTestingModule} from '@angular/router/testing';
@@ -11,6 +12,7 @@ describe('App', () => {
                 // AppState,
                 // Renderer,
                 // {provide: Router,  useClass: MockRouter }
+                TranslationService
             ],
             declarations: [AppComponent],
             imports: [ RouterTestingModule ]
