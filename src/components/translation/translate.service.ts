@@ -27,7 +27,7 @@ export class TranslationService {
         this._defaultLanguage = language;
     }
 
-    /** Enable translation fallback. 
+    /** Enable translation fallback.
      * The fallback is required when the application
      * does not know the translation of a word. */
     public enableFallback(enable: boolean) {
@@ -63,7 +63,7 @@ export class TranslationService {
         return translation;
     }
 
-    /** 
+    /**
      * The instant method is required for the translate pipe.
      * It helps to translate a word instantly.
      */
@@ -75,25 +75,25 @@ export class TranslationService {
     }
 
     /**
-     * The placeholder is a possibility to set a placeholder in the translation 
+     * The placeholder is a possibility to set a placeholder in the translation
      * in the view and this translation service will replace the placeholder
-     * with the value. 
-     * 
+     * with the value.
+     *
      * **translation file:**
      * ```
      * 'hello greet': 'Hello %0 %1'
      * ```
-     * 
+     *
      * %0 and %1 are placeholders which will be replaced in the translation with the given values:
-     * 
+     *
      * **component.ts:**
-     * 
+     *
      * ```js
      * this.translate.instant('hello greet', [customer.firstName, customer.lastName]);
      * ```
-     * 
+     *
      * or in the html with the pipe:
-     * 
+     *
      * ```html
      * <p>{{ 'hello greet' | translate: [customer.firstName, customer.lastName] }}</p>
      * ```
@@ -101,7 +101,7 @@ export class TranslationService {
     private PLACEHOLDER = '%';
 
     /**
-     * The replace function will replace the current placeholder with the 
+     * The replace function will replace the current placeholder with the
      * data parameter from the translation. You can give it one or more optional
      * parameters ('words').
      */
