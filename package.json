@@ -27,15 +27,15 @@
     "reflect-metadata": "^0.1.8"
   },
   "devDependencies": {
-    "@types/core-js": "^0.9.34",
-    "@types/lodash": "^4.14.41",
     "@types/chai": "^3.4.34",
+    "@types/core-js": "^0.9.34",
     "@types/jasmine": "^2.5.38",
+    "@types/lodash": "^4.14.41",
     "@types/node": "^6.0.46",
     "angular2-router-loader": "^0.3.4",
     "angular2-template-loader": "^0.6.0",
     "css-loader": "^0.26.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.24.1",
@@ -50,15 +50,15 @@
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.13",
     "raw-loader": "^0.5.1",
-    "rimraf": "^2.5.4",    
+    "rimraf": "^2.5.4",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "ts-loader": "^1.3.2",
     "tslint": "^4.0.2",
     "tslint-loader": "^3.3.0",
     "typescript": "^2.1.1",
-    "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2",
-    "webpack-merge": "^1.0.1"
+    "webpack": "2.2.0",
+    "webpack-dev-server": "2.2.0-rc.0",
+    "webpack-merge": "^2.4.6"
   }
 }

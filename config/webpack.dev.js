@@ -6,15 +6,6 @@ var helpers = require('./helpers');
 module.exports = webpackMerge(commonConfig, {
   devtool: 'cheap-module-eval-source-map',
 
-  module: {
-    preLoaders: [
-      {
-        test: /\.ts$/,
-        loader: 'tslint-loader'
-      }
-    ]
-  },
-
   output: {
     path: helpers.root('dist'),
     publicPath: 'http://localhost:3000/',
