@@ -30,6 +30,7 @@ const appRoutes: Routes = [
         children: [
             {
                 path: '',
+                pathMatch: 'full',
                 redirectTo: 'welcome'
             },
             {
@@ -58,6 +59,7 @@ const appRoutes: Routes = [
                 children: [
                     {
                         path: '',
+                        pathMatch: 'full',
                         redirectTo: 'basic',
                     },
                     {
