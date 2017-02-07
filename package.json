@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@types/chai": "^3.4.34",
-    "@types/core-js": "^0.9.34",
+    "@types/core-js": "^0.9.35",
     "@types/jasmine": "^2.5.38",
     "@types/lodash": "^4.14.41",
     "@types/node": "^6.0.46",
@@ -44,21 +44,21 @@
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^1.8.0",
+    "karma-webpack": "^2.0.2",
     "lite-server": "^2.2.2",
     "node-sass": "^4.3.0",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.13",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.4",
-    "sass-loader": "^4.0.2",
+    "sass-loader": "^5.0.0",
     "style-loader": "^0.13.1",
-    "ts-loader": "^1.3.2",
+    "ts-loader": "^2.0.0",
     "tslint": "^4.0.2",
     "tslint-loader": "^3.3.0",
-    "typescript": "^2.1.1",
-    "webpack": "2.2.0",
-    "webpack-dev-server": "2.2.0-rc.0",
-    "webpack-merge": "^2.4.6"
+    "typescript": "^2.1.5",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.3.0",
+    "webpack-merge": "^2.6.1"
   }
 }
