@@ -5,7 +5,7 @@ import { Setting } from './setting';
 
 @Component({
     selector: 'setting-category',
-    templateUrl: 'src/components/settings/settingCategory.component.html'
+    templateUrl: './settingCategory.component.html'
 })
 export class SettingCategoryComponent implements OnInit {
     // settings: Setting[];

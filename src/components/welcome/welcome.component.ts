@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'welcome',
-    templateUrl: 'src/components/welcome/welcome.component.html'
+    templateUrl: './welcome.component.html'
 })
 export class WelcomeComponent {
     constructor(private router: Router) { }

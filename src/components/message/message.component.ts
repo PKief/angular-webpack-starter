@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'message',
-    templateUrl: 'src/components/message/message.component.html'
+    templateUrl: './message.component.html'
 })
 export class MessageComponent {
     constructor(private router: Router) { }
