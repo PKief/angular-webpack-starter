@@ -7,5 +7,6 @@ bower_components
 .vscode
 
 npm-debug.log
+debug.log
 
 /modules/rollup-test/dist/
