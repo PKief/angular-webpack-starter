@@ -1,2 +1,2 @@
-# angular2-webpack
-basic angular 2 setup with webpack
+# angular-webpack-starter
+Basic Angular starter project to quickly create Angular projects.
