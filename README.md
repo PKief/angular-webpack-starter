@@ -1,8 +1,7 @@
 # angular-webpack-starter
-Basic Angular starter project to quickly create Angular projects.
+This is a basic Angular starter project to quickly create Angular projects.
 
-**Features:**
-
+## Features
 - Webpack configuration
 - Auto Reload
 - Sass support
@@ -36,4 +35,7 @@ npm run build
 ```
 
 Open your webbrowser at [localhost:9000](http://localhost:9000) to see the productive app running. You can also find the build files in the `dist`-folder.
+
+## Authentication
+If you run the app in the browser you'll be redirected to the login page. You can enter any user name and password here.
 
