@@ -74,11 +74,7 @@ const appRoutes: Routes = [
             {
                 path: 'about',
                 loadChildren: './../about/about.module#AboutModule',
-                data: { preload: true },
-                // use the following code instead of the webpack module (in webpack 2 you do not need the module anymore!)
-                // loadChildren: () => new Promise((resolve)=>(require as any).ensure([], (require: any) => {
-                //     resolve(require('./../about/about.module')['AboutModule']);
-                // }))
+                data: { preload: true }
             },
         ]
     },
@@ -117,4 +113,3 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(
 );
 
 export const APP_ROUTES_MODULE_PROVIDER = [SelectedPreloadingStrategy];
-

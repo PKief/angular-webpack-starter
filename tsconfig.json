@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "target": "es5",
     "lib": [
       "es2017",
@@ -20,7 +21,9 @@
       "chai",
       "node",
       "jasmine",
-      "lodash"
+      "lodash",
+      "webpack",
+      "express"
     ]
   },
   "exclude": [
