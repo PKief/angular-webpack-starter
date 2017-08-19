@@ -1,4 +1,4 @@
-import { TranslationService, TRANSLATION_PROVIDERS } from '../translation';
+import { TranslationService, TRANSLATION_PROVIDERS } from './translation';
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';

@@ -1,6 +1,5 @@
 import { LoginService } from './../login/login.service';
 import { Component } from '@angular/core';
-// let styles = String(require('./start.component.scss'));
 
 @Component({
     selector: 'start',

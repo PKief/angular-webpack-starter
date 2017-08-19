@@ -1,16 +1,16 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, Route, RouterModule, PreloadAllModules, PreloadingStrategy } from '@angular/router';
 import { Observable } from 'rxjs';
-import { LoginComponent } from '../login/login.component';
-import { LoggedInGuard } from '../login/logged-in.guard';
-import { LoggedOutGuard } from '../login/logged-out.guard';
-import { StartComponent } from '../start/start.component';
-import { WelcomeComponent } from '../welcome/welcome.component';
-import { SettingsComponent } from '../settings/settings.component';
-import { MessageComponent } from './../message/message.component';
-import { PageNotFoundComponent } from '../pagenotfound/pagenotfound.component';
-import { SettingCategoryComponent } from './../settings/settingCategory.component';
-import { SettingsResolver } from './../settings/settings.resolver';
+import { LoginComponent } from "./login/login.component";
+import { LoggedOutGuard } from "./login/logged-out.guard";
+import { LoggedInGuard } from "./login/logged-in.guard";
+import { StartComponent } from "./start/start.component";
+import { WelcomeComponent } from "./welcome/welcome.component";
+import { MessageComponent } from "./message/message.component";
+import { SettingsComponent } from "./settings/settings.component";
+import { SettingCategoryComponent } from "./settings/settingCategory.component";
+import { SettingsResolver } from "./settings/settings.resolver";
+import { PageNotFoundComponent } from "./pagenotfound/pagenotfound.component";
 
 const appRoutes: Routes = [
     {
@@ -73,7 +73,7 @@ const appRoutes: Routes = [
             },
             {
                 path: 'about',
-                loadChildren: './../about/about.module#AboutModule',
+                loadChildren: './about/about.module#AboutModule',
                 data: { preload: true }
             },
         ]

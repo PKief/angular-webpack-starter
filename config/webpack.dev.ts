@@ -20,7 +20,14 @@ const config: webpack.Configuration = webpackMerge(commonConfig, {
 
   devServer: {
     historyApiFallback: true,
-    stats: 'minimal'
+    stats: 'minimal',
+    port: 3000,
+    compress: true,
+    overlay: {
+      warnings: true,
+      errors: true
+    },
+    quiet: false
   }
 });
 
