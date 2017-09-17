@@ -1,66 +1,75 @@
-// Implementation has been taken from here:
-// https://scotch.io/tutorials/simple-language-translation-in-angular-2-part-1
-
-import { Injectable, Inject, EventEmitter } from '@angular/core';
-import { TRANSLATIONS } from './translations';
-import * as _ from 'lodash';
+import { Injectable, EventEmitter } from "@angular/core";
 
 @Injectable()
 export class TranslationService {
     private _currentLanguage: string;
-    private _defaultLanguage: string;
-    private _fallback: boolean;
-
-    /** Returns the current language  */
-    public get currentLanguage() {
-        return this._currentLanguage || this._defaultLanguage;
-    }
-
-    constructor( @Inject(TRANSLATIONS) private _translations: any) {
-    }
+    private _fallbackLanguage: string;
+    private _translations: any;
 
     /** Subscribe to language changes */
     public onLanguageChanged: EventEmitter<string> = new EventEmitter<string>();
 
-    /** Set up the default language */
-    public setDefaultLanguage(language: string) {
-        this._defaultLanguage = language;
+    /** Returns the current language  */
+    public get currentLanguage() {
+        return this._currentLanguage || this._fallbackLanguage;
     }
 
-    /** Enable translation fallback.
-     * The fallback is required when the application
-     * does not know the translation of a word. */
-    public enableFallback(enable: boolean) {
-        this._fallback = enable;
+    constructor() {
+        this._translations = {};
+    }
+
+    /** Get the translation object of the separated translation files */
+    private async getTranslationObject(language: string) {
+        try {
+            const lang = await import('./lang-' + language);
+            let module = new lang.Translation();
+            return module.translation;
+        }
+        catch (error) {
+            console.error(error);
+            return Promise.reject(error);
+        }
     }
 
     /** Set the current language */
-    public use(language: string): void {
-        this._currentLanguage = language;
-        this.onLanguageChanged.emit(language);
+    public use(language: string) {
+        return this.getTranslationObject(language).then((translation) => {
+            this._currentLanguage = language;
+            this._translations[language] = translation;
+            this.onLanguageChanged.emit(language);
+        });
+    }
+
+    /** Initialize default fallback language */
+    public setFallbackLanguage(language: string) {
+        return this.getTranslationObject(language).then((translation) => {
+            this._fallbackLanguage = language;
+            this._translations[language] = translation;
+        });
     }
 
     /** Translate a key */
     private translate(key: string): any {
-        let translation = key;
+        if (!this._translations) {
+            return key;
+        }
 
         // found in current language
-        if (this._translations[this._currentLanguage] && _.get(this._translations[this.currentLanguage], key)) {
-            return _.get(this._translations[this.currentLanguage], key);
+        if (this._translations[this._currentLanguage] && getValue(this._translations[this._currentLanguage], key)) {
+            return getValue(this._translations[this._currentLanguage], key);
         }
 
-        // fallback disabled
-        if (!this._fallback) {
-            return translation;
+        // use fallback language
+        if (this._translations[this._fallbackLanguage] && getValue(this._translations[this._fallbackLanguage], key)) {
+            return getValue(this._translations[this._fallbackLanguage], key);
         }
 
-        // found in default language
-        if (this._translations[this._defaultLanguage] && _.get(this._translations[this._defaultLanguage], key)) {
-            return _.get(this._translations[this._defaultLanguage], key);
+        if (!this._fallbackLanguage) {
+            console.warn('No fallback language set!');
         }
 
         // not found
-        return translation;
+        return key;
     }
 
     /**
@@ -105,7 +114,7 @@ export class TranslationService {
      * data parameter from the translation. You can give it one or more optional
      * parameters ('words').
      */
-    public replace(word: string = '', words: string | string[]) {
+    private replace(word: string = '', words: string | string[]) {
         let translation: string = word;
 
         const values: string[] = [].concat(words);
@@ -116,3 +125,32 @@ export class TranslationService {
         return translation;
     }
 }
+
+/** Get the nested keys of an object (http://stackoverflow.com/a/6491621/6942210)
+ *
+ * *This solution is lighter than the lodash get-version and works fine for the translations.* */
+const getValue = (obj: any, key: string): string => {
+    // convert indexes to properties
+    key = key.replace(/\[(\w+)\]/g, '.$1');
+
+    // strip a leading dot
+    key = key.replace(/^\./, '');
+
+    // separate keys in array
+    let keyArray = key.split('.');
+
+    /** Avoid errors in the getValue function. */
+    const isObject = (object) => {
+        return object === Object(object);
+    };
+
+    for (let i = 0; i < keyArray.length; ++i) {
+        let k = keyArray[i];
+        if (isObject(obj) && k in obj) {
+            obj = obj[k];
+        } else {
+            return;
+        }
+    }
+    return obj;
+};

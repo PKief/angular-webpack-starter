@@ -10,7 +10,6 @@ import { StartComponent } from "./start/start.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { PageNotFoundComponent } from "./pagenotfound/pagenotfound.component";
 import { MessageComponent } from "./message/message.component";
-import { TranslatePipe, TRANSLATION_PROVIDERS, TranslationService } from "./translation";
 import { LoginService } from "./login/login.service";
 import { LoggedInGuard } from "./login/logged-in.guard";
 import { LoggedOutGuard } from "./login/logged-out.guard";

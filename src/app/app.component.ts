@@ -16,9 +16,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         // set default language
         let language = navigator.language;
-        // this.translationService.use('de');
-        this.translationService.use(language);
-        this.translationService.setDefaultLanguage('en');
-        this.translationService.enableFallback(true);
+        this.translationService.use('de');
+        this.translationService.setFallbackLanguage('en');
     }
 }
