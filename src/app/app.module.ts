@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
-import { routing, APP_ROUTES_MODULE_PROVIDER } from './app.routing';
 import { LoginComponent } from "./login/login.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { SettingCategoryComponent } from "./settings/settingCategory.component";
@@ -17,12 +16,15 @@ import { LoggedInGuard } from "./login/logged-in.guard";
 import { LoggedOutGuard } from "./login/logged-out.guard";
 import { SettingsService } from "./settings/settings.service";
 import { SettingsResolver } from "./settings/settings.resolver";
+import { TranslationModule } from './translation/translation.module';
+import { RoutingModule } from './app.routing';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    RoutingModule,
+    TranslationModule
   ],
   declarations: [
     AppComponent,
@@ -33,17 +35,13 @@ import { SettingsResolver } from "./settings/settings.resolver";
     WelcomeComponent,
     PageNotFoundComponent,
     MessageComponent,
-    TranslatePipe,
   ],
   providers: [
     LoginService,
     LoggedInGuard,
     LoggedOutGuard,
-    APP_ROUTES_MODULE_PROVIDER,
     SettingsService,
     SettingsResolver,
-    TRANSLATION_PROVIDERS,
-    TranslationService,
   ],
   bootstrap: [AppComponent]
 })

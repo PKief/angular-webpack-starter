@@ -1,4 +1,4 @@
-import { ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { Routes, Route, RouterModule, PreloadAllModules, PreloadingStrategy } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginComponent } from "./login/login.component";
@@ -113,3 +113,10 @@ export const routing: ModuleWithProviders = RouterModule.forRoot(
 );
 
 export const APP_ROUTES_MODULE_PROVIDER = [SelectedPreloadingStrategy];
+
+@NgModule({
+    imports: [routing],
+    exports: [RouterModule],
+    providers: [APP_ROUTES_MODULE_PROVIDER]
+})
+export class RoutingModule { }
