@@ -1,6 +1,6 @@
 import webpackConfig from './webpack.test';
 
-export default function (config) {
+export default (config) => {
   const _config = {
     basePath: '',
 
@@ -24,14 +24,18 @@ export default function (config) {
       noInfo: true
     },
 
-    reporters: ['progress'],
+    client: {
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
+
+    reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: false,
-    browsers: ['PhantomJS'],
-    singleRun: true
+    autoWatch: true,
+    browsers: ['Chrome'],
+    singleRun: false
   };
 
   config.set(_config);
-}
+};

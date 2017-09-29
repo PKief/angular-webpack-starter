@@ -20,18 +20,18 @@ Open a terminal in the project folder and run the following commands.
 
 **Install all required node dependencies:**
 ```
-npm install
+yarn
 ```
 
 **Start the developer mode:**
 ```
-npm start
+yarn run start
 ```
 Open your webbrowser at [localhost:3000](http://localhost:3000) to see the app running. You can edit the source files and the app will be automatically updated. 
 
 **Build the app for production:**
 ```
-npm run build
+yarn run build
 ```
 
 Open your webbrowser at [localhost:9000](http://localhost:9000) to see the productive app running. You can also find the build files in the `dist`-folder.
