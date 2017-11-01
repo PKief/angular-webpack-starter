@@ -58,9 +58,12 @@ const config: webpack.Configuration = {
 
   plugins: [
     // Workaround for angular/angular#11580
+    // solution found: https://github.com/angular/angular/issues/11580#issuecomment-327338189
     new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)@angular/,
-      path.resolve(__dirname, '../src')
+      // The (\\|\/) piece accounts for path separators for Windows and MacOS
+      /(.+)?angular(\\|\/)core(.+)?/,
+      path.join(__dirname, 'src'), // location of your src
+      {} // a map of your routes
     ),
 
     new webpack.optimize.CommonsChunkPlugin({
