@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'welcome',
-    templateUrl: './welcome.component.html'
+    templateUrl: './welcome.component.html',
+    styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent {
     constructor(private router: Router) { }
@@ -32,7 +33,7 @@ export class WelcomeComponent {
 
     goToAboutWithParams() {
         let navigationExtras: NavigationExtras = {
-            queryParams: { "something": 1 },
+            queryParams: { 'something': 1 },
         };
         this.router.navigate(['/app/about', { dataForm: 'test', page: '2' }], navigationExtras);
     }

@@ -13,5 +13,5 @@ app.get('*', (req, res) => {
 
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
-    console.log('\x1b[33m%s\x1b[0m', `Production Express server running at http://localhost:${PORT}/`);
+    console.log('\x1b[36m%s\x1b[0m', `Production Express server running at http://localhost:${PORT}/`);
 });

@@ -1,5 +1,5 @@
 import * as path from 'path';
-let _root = path.resolve(__dirname, '..');
+const _root = path.resolve(__dirname, '..');
 
 /**
  * Get the path name of the files. Used in the webpack configuration.

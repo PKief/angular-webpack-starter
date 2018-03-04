@@ -8,5 +8,6 @@ bower_components
 
 npm-debug.log
 debug.log
+yarn-error.log
 
 /modules/rollup-test/dist/
