@@ -2,7 +2,7 @@ import { Router, NavigationExtras } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'welcome',
+    selector: 'app-welcome',
     templateUrl: './welcome.component.html',
     styleUrls: ['./welcome.component.scss']
 })
@@ -32,7 +32,7 @@ export class WelcomeComponent {
     }
 
     goToAboutWithParams() {
-        let navigationExtras: NavigationExtras = {
+        const navigationExtras: NavigationExtras = {
             queryParams: { 'something': 1 },
         };
         this.router.navigate(['/app/about', { dataForm: 'test', page: '2' }], navigationExtras);

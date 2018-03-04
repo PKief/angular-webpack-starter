@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from "@angular/core";
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class TranslationService {
@@ -14,6 +14,32 @@ export class TranslationService {
         return this._currentLanguage || this._fallbackLanguage;
     }
 
+    /**
+     * The placeholder is a possibility to set a placeholder in the translation
+     * in the view and this translation service will replace the placeholder
+     * with the value.
+     *
+     * **translation file:**
+     * ```
+     * 'hello greet': 'Hello %0 %1'
+     * ```
+     *
+     * %0 and %1 are placeholders which will be replaced in the translation with the given values:
+     *
+     * **component.ts:**
+     *
+     * ```js
+     * this.translate.instant('hello greet', [customer.firstName, customer.lastName]);
+     * ```
+     *
+     * or in the html with the pipe:
+     *
+     * ```html
+     * <p>{{ 'hello greet' | translate: [customer.firstName, customer.lastName] }}</p>
+     * ```
+     */
+    private PLACEHOLDER = '%';
+
     constructor() {
         this._translations = {};
     }
@@ -22,10 +48,9 @@ export class TranslationService {
     private async getTranslationObject(language: string) {
         try {
             const lang = await import('./lang-' + language);
-            let module = new lang.Translation();
+            const module = new lang.Translation();
             return module.translation;
-        }
-        catch (error) {
+        } catch (error) {
             console.error(error);
             return Promise.reject(error);
         }
@@ -79,35 +104,9 @@ export class TranslationService {
     public instant(key: string, words?: string | string[]) {
         const translation: string = this.translate(key);
 
-        if (!words) return translation;
+        if (!words) { return translation; }
         return this.replace(translation, words);
     }
-
-    /**
-     * The placeholder is a possibility to set a placeholder in the translation
-     * in the view and this translation service will replace the placeholder
-     * with the value.
-     *
-     * **translation file:**
-     * ```
-     * 'hello greet': 'Hello %0 %1'
-     * ```
-     *
-     * %0 and %1 are placeholders which will be replaced in the translation with the given values:
-     *
-     * **component.ts:**
-     *
-     * ```js
-     * this.translate.instant('hello greet', [customer.firstName, customer.lastName]);
-     * ```
-     *
-     * or in the html with the pipe:
-     *
-     * ```html
-     * <p>{{ 'hello greet' | translate: [customer.firstName, customer.lastName] }}</p>
-     * ```
-     */
-    private PLACEHOLDER = '%';
 
     /**
      * The replace function will replace the current placeholder with the
@@ -137,7 +136,7 @@ const getValue = (obj: any, key: string): string => {
     key = key.replace(/^\./, '');
 
     // separate keys in array
-    let keyArray = key.split('.');
+    const keyArray = key.split('.');
 
     /** Avoid errors in the getValue function. */
     const isObject = (object) => {
@@ -145,7 +144,7 @@ const getValue = (obj: any, key: string): string => {
     };
 
     for (let i = 0; i < keyArray.length; ++i) {
-        let k = keyArray[i];
+        const k = keyArray[i];
         if (isObject(obj) && k in obj) {
             obj = obj[k];
         } else {

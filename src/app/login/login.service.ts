@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class LoginService {
-    private loggedIn: boolean = false;
+    private loggedIn = false;
 
     constructor(private router: Router) {
         this.loggedIn = !!localStorage.getItem('loggedIn');

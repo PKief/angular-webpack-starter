@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'about-fallback',
+    selector: 'app-about-fallback',
     template: `
         <h1>I am about fallback</h1>
     `

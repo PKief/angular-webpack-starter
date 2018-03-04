@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Setting } from './setting';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/pluck';
 
 @Component({
-    selector: 'setting-category',
+    selector: 'app-setting-category',
     templateUrl: './settingCategory.component.html'
 })
 export class SettingCategoryComponent implements OnInit {

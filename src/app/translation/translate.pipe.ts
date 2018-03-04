@@ -9,7 +9,7 @@ export class TranslatePipe implements PipeTransform {
     constructor(private translate: TranslationService) {
     }
     transform(value: string, args: string | string[]): any {
-        if (!value) return;
+        if (!value) { return; }
         return this.translate.instant(value, args);
     }
 }

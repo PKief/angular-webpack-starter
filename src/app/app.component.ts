@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslationService } from "./translation";
+import { TranslationService } from './translation';
 
 require('./../styles/styles.global.scss');
 
 @Component({
-    selector: 'my-app',
+    selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })

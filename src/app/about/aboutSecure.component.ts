@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'about-secure',
+    selector: 'app-about-secure',
     template: `
         <h1>I am about secure</h1>
     `

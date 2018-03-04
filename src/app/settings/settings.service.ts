@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Setting } from './setting';
 
-let SETTINGS = [
-    new Setting('password', 'change your password', "profile"),
-    new Setting('username', 'change your username', "profile"),
-    new Setting('notifications', 'change your notifications', "basic"),
-    new Setting('timezone', 'change your timezone', "basic"),
+const SETTINGS = [
+    new Setting('password', 'change your password', 'profile'),
+    new Setting('username', 'change your username', 'profile'),
+    new Setting('notifications', 'change your notifications', 'basic'),
+    new Setting('timezone', 'change your timezone', 'basic'),
 ];
 
-let settingsPromise = Promise.resolve(SETTINGS);
+const settingsPromise = Promise.resolve(SETTINGS);
 
 @Injectable()
 export class SettingsService {

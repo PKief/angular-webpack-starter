@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'about',
+    selector: 'app-about',
     template: `
         <h1>I am about</h1>
         <a routerLink="secure">Secure</a>
