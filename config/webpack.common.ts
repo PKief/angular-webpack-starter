@@ -4,11 +4,11 @@ import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as path from 'path';
 import * as helpers from './helpers';
 
-const config: webpack.Configuration = {
+const config = {
   entry: {
-    'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
-    'app': './src/main.ts'
+    polyfills: './src/polyfills.ts',
+    vendor: './src/vendor.ts',
+    app: './src/main.ts'
   },
 
   resolve: {
@@ -24,7 +24,7 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.ts$/,
-        use: ['awesome-typescript-loader', 'angular2-template-loader', 'angular-router-loader']
+        use: ['ts-loader', 'angular2-template-loader', 'angular-router-loader']
       },
       {
         test: /\.html$/,
@@ -33,16 +33,6 @@ const config: webpack.Configuration = {
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         use: 'file-loader?name=assets/[name].[hash].[ext]'
-      },
-      {
-        test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
-        use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?sourceMap' })
-      },
-      {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        use: 'raw-loader'
       },
       {
         test: /\.scss$/,
@@ -56,6 +46,18 @@ const config: webpack.Configuration = {
     ]
   },
 
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all"
+        }
+      }
+    }
+  },
+
   plugins: [
     // Workaround for angular/angular#11580
     // solution found: https://github.com/angular/angular/issues/11580#issuecomment-327338189
@@ -65,10 +67,6 @@ const config: webpack.Configuration = {
       path.join(__dirname, 'src'), // location of your src
       {} // a map of your routes
     ),
-
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['app', 'vendor', 'polyfills']
-    }),
 
     new HtmlWebpackPlugin({
       template: 'src/index.html'

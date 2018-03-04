@@ -1,11 +1,10 @@
 import * as webpack from 'webpack';
 import * as webpackMerge from 'webpack-merge';
-import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as helpers from './helpers';
 import commonConfig from './webpack.common';
 
 const config: webpack.Configuration = webpackMerge(commonConfig, {
-  devtool: 'cheap-module-eval-source-map',
+  mode: 'development',
 
   output: {
     path: helpers.root('dist'),
@@ -14,9 +13,7 @@ const config: webpack.Configuration = webpackMerge(commonConfig, {
     chunkFilename: '[id].chunk.js'
   },
 
-  plugins: [
-    new ExtractTextPlugin('[name].css')
-  ],
+  plugins: [],
 
   devServer: {
     historyApiFallback: true,

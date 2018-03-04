@@ -1,7 +1,8 @@
 import * as helpers from './helpers';
-import * as webpack from "webpack";
+import * as webpack from 'webpack';
 
-const config: webpack.Configuration = {
+const config = {
+  mode: 'development',
   devtool: 'inline-source-map',
 
   resolve: {
@@ -12,12 +13,11 @@ const config: webpack.Configuration = {
     rules: [
       {
         test: /\.ts$/,
-        use: ['awesome-typescript-loader', 'angular2-template-loader', 'angular-router-loader']
+        use: ['ts-loader', 'angular2-template-loader', 'angular-router-loader']
       },
       {
         test: /\.html$/,
         use: 'html-loader'
-
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
