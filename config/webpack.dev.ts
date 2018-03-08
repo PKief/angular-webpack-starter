@@ -21,10 +21,9 @@ const config: webpack.Configuration = webpackMerge(commonConfig, {
     port: 3000,
     compress: true,
     overlay: {
-      warnings: true,
+      warnings: false,
       errors: true
-    },
-    quiet: false
+    }
   }
 });
 

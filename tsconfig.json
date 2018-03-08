@@ -1,33 +1,19 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
+    "outDir": "./dist",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "lib": [
       "es2017",
       "dom"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": false,
-    "typeRoots": [
-      "../node_modules/@types"
-    ],
-    "types": [
-      "core-js",
-      "chai",
-      "node",
-      "jasmine",
-      "webpack",
-      "express"
     ]
-  },
-  "exclude": [
-    "node_modules"
-  ],
-  "awesomeTypescriptLoaderOptions": {
-    "silent": true
   }
 }
