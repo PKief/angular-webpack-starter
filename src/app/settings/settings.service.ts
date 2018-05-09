@@ -10,7 +10,9 @@ const SETTINGS = [
 
 const settingsPromise = Promise.resolve(SETTINGS);
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class SettingsService {
     getAllSettings() {
         return settingsPromise;

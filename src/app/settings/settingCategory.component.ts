@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Setting } from './setting';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/pluck';
+import { Observable } from 'rxjs';
+import { pluck } from 'rxjs/operators';
 
 @Component({
     selector: 'app-setting-category',
@@ -21,6 +20,6 @@ export class SettingCategoryComponent implements OnInit {
             this.title = _.category;
             // this.settings = this.route.snapshot.data['settings'];
         });
-        this.settings = this.route.data.pluck('settings');
+        this.settings = this.route.data.pipe(pluck('settings'));
     }
 }

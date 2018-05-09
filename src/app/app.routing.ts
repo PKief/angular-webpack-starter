@@ -1,17 +1,16 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { Routes, Route, RouterModule, PreloadAllModules, PreloadingStrategy } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { LoggedOutGuard } from './login/logged-out.guard';
+import { PreloadingStrategy, Route, RouterModule, Routes } from '@angular/router';
+import { Observable, of } from 'rxjs';
 import { LoggedInGuard } from './login/logged-in.guard';
+import { LoggedOutGuard } from './login/logged-out.guard';
+import { LoginComponent } from './login/login.component';
+import { MessageComponent } from './message/message.component';
+import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+import { SettingCategoryComponent } from './settings/settingCategory.component';
+import { SettingsComponent } from './settings/settings.component';
+import { SettingsResolver } from './settings/settings.resolver';
 import { StartComponent } from './start/start.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { MessageComponent } from './message/message.component';
-import { SettingsComponent } from './settings/settings.component';
-import { SettingCategoryComponent } from './settings/settingCategory.component';
-import { SettingsResolver } from './settings/settings.resolver';
-import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
 
 const appRoutes: Routes = [
     {
@@ -95,7 +94,7 @@ const appRoutes: Routes = [
 export class SelectedPreloadingStrategy implements PreloadingStrategy {
     preload(route: Route, load: Function): Observable<any> {
         // if the route has the attribute 'data' and it is set to true, then make preloading, otherwise lazy loading
-        return route.data && route.data['preload'] ? load() : Observable.of(null);
+        return route.data && route.data['preload'] ? load() : of(null);
     }
 }
 
