@@ -1,8 +1,6 @@
-import * as webpack from 'webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
-import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as path from 'path';
-import * as helpers from './helpers';
+import * as webpack from 'webpack';
 
 const config = {
   entry: {
@@ -24,7 +22,13 @@ const config = {
       },
       {
         test: /\.ts$/,
-        use: ['ts-loader', 'angular2-template-loader', 'angular-router-loader']
+        use: ['awesome-typescript-loader', 'angular2-template-loader', 'angular-router-loader']
+      },
+      {
+        // Mark files inside `@angular/core` as using SystemJS style dynamic imports.
+        // Removing this will cause deprecation warnings to appear.
+        test: /[\/\\]@angular[\/\\]core[\/\\].+\.js$/,
+        parser: { system: true },
       },
       {
         test: /\.html$/,
