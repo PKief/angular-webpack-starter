@@ -1,5 +1,4 @@
 import * as helpers from './helpers';
-import * as webpack from 'webpack';
 
 const config = {
   mode: 'development',

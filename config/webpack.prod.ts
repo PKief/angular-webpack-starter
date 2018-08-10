@@ -1,6 +1,5 @@
 import * as webpack from 'webpack';
 import * as webpackMerge from 'webpack-merge';
-import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as helpers from './helpers';
 import commonConfig from './webpack.common';
 
