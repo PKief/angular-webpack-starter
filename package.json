@@ -8,7 +8,7 @@
     "prebuild": "rimraf dist && npm run lint",
     "build": "webpack --config config/webpack.prod.ts --progress --profile --bail",
     "postbuild": "ts-node server.ts",
-    "lint": "tslint ./src/**/*.ts -t stylish"
+    "lint": "tslint ./src/**/*.ts -t stylish -p tsconfig.json -c tslint.json"
   },
   "license": "MIT",
   "dependencies": {

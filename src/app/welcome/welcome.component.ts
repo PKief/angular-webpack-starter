@@ -22,7 +22,7 @@ export class WelcomeComponent {
 
         this.router.navigate(['/app/settings'], {
             queryParams: {
-                filter: new Buffer(JSON.stringify(this.myQueryParams)).toString('base64')
+                filter: Buffer.from(JSON.stringify(this.myQueryParams), 'base64')
             }
         });
     }
