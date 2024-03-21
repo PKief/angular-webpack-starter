@@ -51,7 +51,7 @@
     "karma-jasmine": "^2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^3.0.5",
+    "karma-webpack": "^5.0.1",
     "lite-server": "^2.6.1",
     "node-sass": "^9.0.0",
     "null-loader": "^0.1.1",
@@ -65,7 +65,7 @@
     "tslint-loader": "^3.5.4",
     "webpack": "4.29.6",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "3.11.3",
+    "webpack-dev-server": "5.0.4",
     "webpack-merge": "^4.2.1"
   }
 }
